@@ -8,8 +8,9 @@
 int main(int argc, char **argv)
 {
 	if (argc != 2)
-		printf("holi\n");
-		/**error_argv();
-	op_re_file(argv);*/
+		error_argv();
+
+	op_re_file(argv);
+	/** invalid_instrution(); **/
 	return (0);
 }

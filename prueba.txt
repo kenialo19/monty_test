@@ -1,0 +1,8 @@
+push 1
+push 2
+push 1
+pall
+
+
+//BITÁCORA
+Quedamos en la función pall que necesitamos devolvernos en la lista linkeada para imprimir todos los elementos

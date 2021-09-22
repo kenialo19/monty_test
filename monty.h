@@ -1,6 +1,7 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
+#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -35,5 +36,37 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/** PROTOTYPES **/
+void op_re_file(char **argv);
+char **tokenizer(char *s, char *delim);
+int count_words(char *str);
+void push(stack_t **head, unsigned int line_number);
+void pall(stack_t **head, unsigned int line_number);
+void pop(stack_t **head, unsigned int line_number);
+void swap(stack_t **head, unsigned int line_number);
+void add(stack_t **head, unsigned int line_number);
+void nop(stack_t **head, unsigned int line_number);
+void invalid_instrution(void);
+void open_error(char **argv);
+void malloc_error(void);
+void error_argv(void);
+
+void (*get_op_code(char *token, unsigned int line))(stack_t **, unsigned int);
+
+/**
+ *
+ *
+ *
+ */
+
+static const instruction_t list[] = {
+	{"push", push},
+	{"pall", pall},
+	{"pop", pop},
+	{"swap", swap},
+	{"add", add},
+	{"nop", nop},
+	{NULL, NULL}};
 
 #endif /* _MONTY_H_ */

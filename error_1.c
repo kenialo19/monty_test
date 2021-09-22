@@ -31,3 +31,9 @@ void malloc_error(void)
 	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 }
+
+void invalid_instrution(void)
+{
+	fprintf(stderr, "L<line_number>: unknown instruction <opcode>\n");
+	exit(EXIT_FAILURE);
+}
